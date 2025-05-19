@@ -12,14 +12,16 @@ describe("getCenterCoordiate", () => {
 
 describe("calculateCrossCoordinates", () => {
   it("throws an error when the size arg is even", () => {
-    expect(() => calculateCrossCoordinates(2)).toThrow();
-    expect(() => calculateCrossCoordinates(4)).toThrow();
-    expect(() => calculateCrossCoordinates(6)).toThrow();
+    const expectedError = "Map size must be an odd number";
+    expect(() => calculateCrossCoordinates(2)).toThrow(expectedError);
+    expect(() => calculateCrossCoordinates(4)).toThrow(expectedError);
+    expect(() => calculateCrossCoordinates(6)).toThrow(expectedError);
   });
   it("throws an error when the distanceFromEdge is too large", () => {
-    expect(() => calculateCrossCoordinates(3, 2)).toThrow();
-    expect(() => calculateCrossCoordinates(5, 3)).toThrow();
-    expect(() => calculateCrossCoordinates(7, 4)).toThrow();
+    const expectedError = "Distance from edge is bigger than available space";
+    expect(() => calculateCrossCoordinates(3, 2)).toThrow(expectedError);
+    expect(() => calculateCrossCoordinates(5, 3)).toThrow(expectedError);
+    expect(() => calculateCrossCoordinates(7, 4)).toThrow(expectedError);
   });
   it("returns coordinates of a cross to the edge of the square when distanceFromEdge is 0", () => {
     expect(calculateCrossCoordinates(3, 0)).toEqual([
