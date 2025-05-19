@@ -16,7 +16,7 @@ describe("calculateCrossCoordinates", () => {
     expect(() => calculateCrossCoordinates(4)).toThrow();
     expect(() => calculateCrossCoordinates(6)).toThrow();
   });
-  it("throws an error when the gap is too large", () => {
+  it("throws an error when the distanceFromEdge is too large", () => {
     expect(() => calculateCrossCoordinates(3, 2)).toThrow();
     expect(() => calculateCrossCoordinates(5, 3)).toThrow();
     expect(() => calculateCrossCoordinates(7, 4)).toThrow();
