@@ -13,6 +13,7 @@ export const createMegaverse = async (goalMap: Cell[][]) => {
     for (const [columnIndex, cell] of row.entries()) {
       if (cell !== "SPACE") {
         await createCell(rowIndex, columnIndex, cell);
+        // delay between api calls to avoid rate limiting
         await delay(DELAY_MS);
       }
     }
