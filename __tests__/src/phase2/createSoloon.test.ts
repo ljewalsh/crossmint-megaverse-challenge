@@ -1,8 +1,5 @@
-import axios from "axios";
 import createSoloon from "../../../src/phase2/createSoloon";
 import { createSoloon as createSoloonApi } from "../../../src/api";
-
-jest.mock("../../../src/api");
 
 describe("createSoloon", () => {
   it("callsCreateSoloonApi with the expected row, column, and color when color is WHITE", async () => {

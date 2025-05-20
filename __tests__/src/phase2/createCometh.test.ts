@@ -1,8 +1,5 @@
-import axios from "axios";
 import createCometh from "../../../src/phase2/createCometh";
 import { createCometh as createComethApi } from "../../../src/api";
-
-jest.mock("../../../src/api");
 
 describe("createCometh", () => {
   it("calls createComethidApi with the expected row, column, and direction when direction is LEFT", async () => {
