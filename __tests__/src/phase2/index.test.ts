@@ -1,7 +1,7 @@
 import { createMegaverse } from "../../../src/phase2";
 import type { Cell } from "../../../src/types";
 import createCell from "../../../src/phase2/createCell";
-import { DELAY_MS } from "../../../src/phase2";
+import { DELAY_MS } from "../../../src/delay";
 
 jest.mock("../../../src/phase2/createCell");
 jest.useFakeTimers();

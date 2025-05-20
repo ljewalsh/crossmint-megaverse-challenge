@@ -1,12 +1,7 @@
 import { getGoalMap, createPolyanet } from "../api";
 import { Cell, Cometh, Soloon } from "../types";
 import createCell from "./createCell";
-
-export const DELAY_MS = 500;
-
-const delay = (ms: number) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-};
+import delay from "../delay";
 
 export const createMegaverse = async (goalMap: Cell[][]) => {
   for (const [rowIndex, row] of goalMap.entries()) {
@@ -14,7 +9,7 @@ export const createMegaverse = async (goalMap: Cell[][]) => {
       if (cell !== "SPACE") {
         await createCell(rowIndex, columnIndex, cell);
         // delay between api calls to avoid rate limiting
-        await delay(DELAY_MS);
+        await delay();
       }
     }
   }
