@@ -3,22 +3,14 @@ import { Cell, Cometh, Soloon } from "../types";
 import createCometh from "./createCometh";
 import createSoloon from "./createSoloon";
 
-const isCometh = (cell: string): cell is Cometh => {
-  return ["LEFT_COMETH", "RIGHT_COMETH", "UP_COMETH", "DOWN_COMETH"].includes(
-    cell
-  );
-};
-const isSaloon = (cell: string): cell is Soloon => {
-  return [
-    "WHITE_SOLOON",
-    "BLUE_SOLOON",
-    "PURPLE_SOLOON",
-    "RED_SOLOON",
-  ].includes(cell);
-};
+const isCometh = (cell: string): cell is Cometh => cell.endsWith("_COMETH");
+const isSaloon = (cell: string): cell is Soloon => cell.endsWith("_SOLOON");
 
 const createCell = (rowIndex: number, columnIndex: number, cell: Cell) => {
   console.log(`Creating cell at ${rowIndex}, ${columnIndex}: ${cell}`);
+  if (cell === "SPACE") {
+    return;
+  }
   if (cell === "POLYANET") {
     return createPolyanet(rowIndex, columnIndex);
   }
