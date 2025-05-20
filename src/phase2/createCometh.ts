@@ -6,7 +6,7 @@ const createCometh = async (
   column: number,
   comethType: Cometh,
 ) => {
-  const [direction, _suffix] = comethType.split("_");
+  const [direction] = comethType.split("_");
   return createComethApi(row, column, direction.toLowerCase() as Direction);
 };
 

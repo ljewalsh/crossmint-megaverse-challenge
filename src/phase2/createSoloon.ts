@@ -6,7 +6,7 @@ const createSoloon = async (
   column: number,
   soloonType: Soloon,
 ) => {
-  const [color, _suffix] = soloonType.split("_");
+  const [color] = soloonType.split("_");
   return createSoloonApi(row, column, color.toLowerCase() as Color);
 };
 

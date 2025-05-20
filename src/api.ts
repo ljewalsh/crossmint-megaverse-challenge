@@ -4,7 +4,10 @@ import type { Color, Direction } from "./types";
 
 const API_BASE_URL = "https://challenge.crossmint.io/api/";
 
-const makePostRequest = (endpoint: string, body?: Record<string, any>) => {
+const makePostRequest = (
+  endpoint: string,
+  body?: Record<string, string | number>,
+) => {
   return axios({
     headers: {
       "Content-Type": "application/json",

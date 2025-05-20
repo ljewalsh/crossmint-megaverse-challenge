@@ -1,5 +1,5 @@
-import { getGoalMap, createPolyanet } from "../api";
-import { Cell, Cometh, Soloon } from "../types";
+import { getGoalMap } from "../api";
+import type { Cell } from "../types";
 import createCell from "./createCell";
 import delay from "../delay";
 

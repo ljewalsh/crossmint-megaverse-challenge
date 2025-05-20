@@ -16,7 +16,7 @@ const calculateCrossCoordinates = (
   }
   const coordinates = [[centerCoordinate, centerCoordinate]];
   const maxIndex = mapSize - centerCoordinate - distanceFromEdge;
-  for (var i = 1; i < maxIndex; i++) {
+  for (let i = 1; i < maxIndex; i++) {
     const topLeftCoordinates = [centerCoordinate - i, centerCoordinate - i];
     const topRightCoordinates = [centerCoordinate - i, centerCoordinate + i];
     const bottomLeftCoordinates = [centerCoordinate + i, centerCoordinate - i];
